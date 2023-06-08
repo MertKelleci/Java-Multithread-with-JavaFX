@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csvreader.FirstPageController">
+   <children>
+      <Button fx:id="chooseFile" layoutX="14.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#getFile" text="Dosya Seç" />
+      <ProgressBar fx:id="progressBar" layoutX="20.0" layoutY="674.0" prefHeight="18.0" prefWidth="350.0" />
+      <Label fx:id="fileLabel" layoutX="102.0" layoutY="43.0" prefHeight="18.0" prefWidth="116.0" text="Dosya Seçilmedi" />
+      <TableView fx:id="fileTable" layoutX="3.0" layoutY="111.0" prefHeight="538.0" prefWidth="1269.0">
+        <columns>
+          <TableColumn fx:id="productColumn" prefWidth="75.0" text="Product" />
+          <TableColumn fx:id="issueColumn" prefWidth="75.0" text="Issue" />
+            <TableColumn fx:id="companyColumn" prefWidth="75.0" text="Company" />
+            <TableColumn fx:id="stateColumn" prefWidth="75.0" text="State" />
+            <TableColumn fx:id="zipColumn" prefWidth="75.0" text="ZIP Code" />
+            <TableColumn fx:id="complaintColumn" prefWidth="75.0" text="Complaint ID" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <RadioButton fx:id="productButton" layoutX="102.0" layoutY="93.0" mnemonicParsing="false" onAction="#selectColumns">
+         <toggleGroup>
+            <ToggleGroup fx:id="columnGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="issueButton" layoutX="315.0" layoutY="93.0" mnemonicParsing="false" onAction="#selectColumns" toggleGroup="$columnGroup" />
+      <RadioButton fx:id="companyButton" layoutX="527.0" layoutY="93.0" mnemonicParsing="false" onAction="#selectColumns" toggleGroup="$columnGroup" />
+      <RadioButton fx:id="stateButton" layoutX="733.0" layoutY="93.0" mnemonicParsing="false" onAction="#selectColumns" toggleGroup="$columnGroup" />
+      <RadioButton fx:id="zipButton" layoutX="944.0" layoutY="93.0" mnemonicParsing="false" onAction="#selectColumns" toggleGroup="$columnGroup" />
+      <RadioButton fx:id="complaintButton" layoutX="1158.0" layoutY="93.0" mnemonicParsing="false" onAction="#selectColumns" toggleGroup="$columnGroup" />
+      <ChoiceBox fx:id="fieldChoicebox" layoutX="835.0" layoutY="40.0" prefWidth="150.0" />
+      <TextField fx:id="fieldRuleText" layoutX="1010.0" layoutY="39.0" prefHeight="26.0" prefWidth="230.0" promptText="Filtreniz" />
+      <Button fx:id="startButton" layoutX="1143.0" layoutY="662.0" mnemonicParsing="false" onAction="#startProgress" prefHeight="41.0" prefWidth="97.0" text="Başla" />
+      <Spinner fx:id="threadSpinner" editable="true" layoutX="366.0" layoutY="39.0" prefHeight="26.0" prefWidth="70.0" />
+      <Label layoutX="458.0" layoutY="44.0" text="Thread Adeti" />
+      <Spinner fx:id="comparisonThreshold" editable="true" layoutX="587.0" layoutY="39.0" prefHeight="26.0" prefWidth="70.0" />
+      <Label layoutX="669.0" layoutY="43.0" text="Benzerlik Oranı" />
+   </children>
+</AnchorPane>

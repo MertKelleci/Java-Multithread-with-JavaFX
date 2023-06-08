@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csvreader.SecondPageController">
+   <children>
+      <TableView fx:id="fileTable" layoutX="28.0" layoutY="22.0" prefHeight="522.0" prefWidth="1224.0">
+        <columns>
+          <TableColumn minWidth="200.0" prefWidth="600.0" text="Şikayet 1">
+               <columns>
+                  <TableColumn fx:id="product1Column" prefWidth="96.0" text="Product" />
+                  <TableColumn fx:id="issue1Column" prefWidth="96.0" text="Issue" />
+                  <TableColumn fx:id="company1Column" prefWidth="96.0" text="Company" />
+                  <TableColumn fx:id="state1Column" prefWidth="96.0" text="State" />
+                  <TableColumn fx:id="zip1Column" prefWidth="96.0" text="ZIP Code" />
+                  <TableColumn fx:id="complaint1Column" prefWidth="96.0" text="Complaint ID" />
+               </columns>
+            </TableColumn>
+            <TableColumn minWidth="200.0" prefWidth="600.0" text="Şikayet 2">
+               <columns>
+                  <TableColumn fx:id="product2Column" prefWidth="96.0" text="Product" />
+                  <TableColumn fx:id="issue2Column" prefWidth="96.0" text="Issue" />
+                  <TableColumn fx:id="company2Column" prefWidth="96.0" text="Company" />
+                  <TableColumn fx:id="state2Column" prefWidth="96.0" text="State" />
+                  <TableColumn fx:id="zip2Column" prefWidth="96.0" text="ZIP Code" />
+                  <TableColumn fx:id="complaint2Column" prefWidth="96.0" text="Complaint ID" />
+               </columns>
+            </TableColumn>
+            <TableColumn fx:id="comparisonColumn" prefWidth="72.0" text="Benzerlik" />
+        </columns>
+      </TableView>
+      <ProgressBar fx:id="progressBar" layoutX="872.0" layoutY="557.0" prefHeight="20.0" prefWidth="380.0" />
+      <TableView fx:id="threadTable" layoutX="28.0" layoutY="557.0" prefHeight="154.0" prefWidth="326.0">
+        <columns>
+          <TableColumn fx:id="threadColumn" prefWidth="163.0" text="Thread" />
+          <TableColumn fx:id="execTimeColumn" prefWidth="163.0" text="Çalışma Zamanı" />
+        </columns>
+      </TableView>
+      <Button fx:id="switchPagesButton" layoutX="1070.0" layoutY="616.0" mnemonicParsing="false" onAction="#switchPages" prefHeight="90.0" prefWidth="182.0" text="Çıkış" />
+   </children>
+</AnchorPane>
